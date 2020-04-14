@@ -6,25 +6,46 @@
 }
 
 body {
-  background: #fff;
+  background: #ececec;
   font: 14px sans-serif;
-  color: #333;
-  text-align: center;
+  color: #30475e;
 }
 
 button {
-  padding: 5px 8px;
+  padding: 10px 20px;
   margin-top: 15px;
+  background: #f2a365;
+  color: #30475e;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 1px 10px 0 #2228312a;
+}
+
+button:hover {
+  background: #e48843;
+  cursor: pointer;
 }
 
 header {
   height: 50px;
   padding-top: 10px;
-  background: #00a846;
+  background: #222831;
   margin-bottom: 15px;
   color: #fff;
 }
 
+header > h2 {
+  margin-left: 10%;
+  color: #f2a365;
+}
+
 li.project {
-  margin: 10px 0;
+  margin: 10px 10%;
+  list-style: none;
+}
+
+.ml-1 {
+  margin-left: 10%;
 }

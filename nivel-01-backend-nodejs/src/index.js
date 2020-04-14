@@ -29,7 +29,7 @@ app.post('/projects', (request, response) => {
   const project = { id: uuid(), title, owner }
   projects.push(project)
 
-  return response.status(201).json({ project })
+  return response.status(201).json(project)
 })
 
 // Update
@@ -47,7 +47,7 @@ app.put('/projects/:id', (request, response) => {
 
   projects[projectIndex] = project
 
-  return response.json({ project })
+  return response.json(project)
 })
 
 // Delete
