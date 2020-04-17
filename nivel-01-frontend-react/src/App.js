@@ -19,7 +19,6 @@ function App () {
       title: `teste API`,
       owner: 'react'
     })
-    console.log(response.data)
 
     setProjects([...projects, response.data])
   }
