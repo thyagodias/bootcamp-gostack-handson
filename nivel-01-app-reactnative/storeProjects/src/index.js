@@ -5,7 +5,8 @@ import {
   FlatList,
   Text,
   StyleSheet,
-  StatusBar
+  StatusBar,
+  TouchableOpacity
 } from 'react-native'
 import api from './services/api'
 
@@ -17,6 +18,14 @@ export default function App () {
       setProjects(response.data)
     })
   }, [])
+
+  async function handleAddProject () {
+    const response = await api.post('/projects', {
+      title: 'Novo',
+      owner: 'Thyago'
+    })
+    setProjects([...projects, response.data])
+  }
 
   return (
     <>
@@ -33,6 +42,13 @@ export default function App () {
             </View>
           )}
         ></FlatList>
+        <TouchableOpacity
+          onPress={handleAddProject}
+          style={styles.button}
+          activeOpacity={0.6}
+        >
+          <Text style={styles.buttonText}>Adicionar</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     </>
   )
@@ -60,5 +76,17 @@ const styles = StyleSheet.create({
   owner: {
     color: '#3b6978',
     marginBottom: 15
+  },
+  button: {
+    backgroundColor: '#84a9ac',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4
+  },
+  buttonText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#204051'
   }
 })
